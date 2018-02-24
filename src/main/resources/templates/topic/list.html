@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" view="cat">
+<head>
+    <title>文章列表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/sakura.min.css}" type="text/css">
+</head>
+<body>
+    <div th:each="t,iter : ${topics}">
+        <a th:text="${t.title}" th:href="${'/'+iter.index}">文章名</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" view="topics">
+<head>
+    <title th:text="${t.title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/sakura.min.css}" type="text/css">
+    <script th:src="@{/js/marked.min.js}"></script>
+
+</head>
+<body>
+    <h2 th:text="${t.title}">标题</h2>
+    <div id="content"></div>
+
+    <script th:inline="javascript">
+      var c = /*[[${t.content}]]*/ '#mark';
+      document.getElementById('content').innerHTML = marked(c);
+    </script>
+</body>
+</html>
